@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 5</title>
+  </head>
+  <body>
+    <div class="form">
+      <input type="number" id="number1" class="input" />
+      <select name="operator" id="operator">
+        <option value="plus">+</option>
+        <option value="minus">-</option>
+        <option value="multiply">*</option>
+        <option value="divide">/</option>
+      </select>
+      <input type="number" id="number2" class="input" />
+      <span>=</span>
+      <input type="number" id="result" class="input" />
+      <button type="button" class="button" id="button">Calcular</button>
+    </div>
+
+    <script>
+      const button = document.querySelector('#button');
+
+      button.addEventListener('click', () => {
+        const num1 = document.querySelector('#number1').value;
+        const num2 = document.querySelector('#number2').value;
+        const operator = document.querySelector('#operator').value;
+        const result = document.querySelector('#result');
+
+        if (operator === 'plus') result.value = parseInt(num1) + parseInt(num2);
+        if (operator === 'minus') result.value = parseInt(num1) - parseInt(num2);
+        if (operator === 'multiply') result.value = parseInt(num1) * parseInt(num2);
+        if (operator === 'divide') result.value = parseInt(num1) / parseInt(num2);
+      });
+    </script>
+  </body>
+</html>

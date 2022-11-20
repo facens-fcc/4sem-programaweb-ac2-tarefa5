@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 7</title>
+  </head>
+  <body>
+    <form class="form">
+      <div>
+        <label for="custoFabrica">Custo de Fábrica</label>
+        <input class="input" type="number" id="custoFabrica" name="custoFabrica" />
+      </div>
+      <div>
+        <label for="percentualDistribuidor">% do Distribuidor</label>
+        <input class="input" type="number" id="percentualDistribuidor" name="percentualDistribuidor" />
+      </div>
+      <div>
+        <label for="percentualImpostos">% Impostos</label>
+        <input class="input" type="number" id="percentualImpostos" name="percentualImpostos" />
+      </div>
+      <div>
+        <button class="button" id="calcular" type="button">Calcular</button>
+      </div>
+      <div>
+        <label for="valorFinal">Valor Final</label>
+        <input class="input" type="number" id="valorFinal" name="valorFinal" />
+      </div>
+    </form>
+
+    <script>
+      const calcular = document.querySelector('#calcular');
+
+      calcular.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const custoFabrica = parseFloat(document.querySelector('#custoFabrica').value);
+        const percentualImpostos = parseFloat(document.querySelector('#percentualImpostos').value);
+        const percentualDistribuidor = parseFloat(document.querySelector('#percentualDistribuidor').value);
+
+        const valorFinal = document.querySelector('#valorFinal');
+        valorFinal.value = custoFabrica + custoFabrica * percentualDistribuidor + custoFabrica * percentualImpostos;
+      });
+    </script>
+  </body>
+</html>
