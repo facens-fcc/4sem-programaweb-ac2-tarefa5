@@ -13,15 +13,15 @@
         <input class="input" type="number" id="custoFabrica" name="custoFabrica" />
       </div>
       <div>
-        <label for="percentualDistribuidor">% do Distribuidor</label>
-        <input class="input" type="number" id="percentualDistribuidor" name="percentualDistribuidor" />
+        <label for="percDistribuidor">% do Distribuidor</label>
+        <input class="input" type="number" id="percDistribuidor" name="percDistribuidor" />
       </div>
       <div>
-        <label for="percentualImpostos">% Impostos</label>
-        <input class="input" type="number" id="percentualImpostos" name="percentualImpostos" />
+        <label for="percImpostos">% Impostos</label>
+        <input class="input" type="number" id="percImpostos" name="percImpostos" />
       </div>
       <div>
-        <button class="button" id="calcular" type="button">Calcular</button>
+        <button class="button" id="btnCalcular" type="button">Calcular</button>
       </div>
       <div>
         <label for="valorFinal">Valor Final</label>
@@ -30,17 +30,17 @@
     </form>
 
     <script>
-      const calcular = document.querySelector('#calcular');
+      const btnCalcular = document.querySelector('#btnCalcular');
 
-      calcular.addEventListener('click', (e) => {
+      btnCalcular.addEventListener('click', (e) => {
         e.preventDefault();
 
         const custoFabrica = parseFloat(document.querySelector('#custoFabrica').value);
-        const percentualImpostos = parseFloat(document.querySelector('#percentualImpostos').value);
-        const percentualDistribuidor = parseFloat(document.querySelector('#percentualDistribuidor').value);
+        const percImpostos = parseFloat(document.querySelector('#percImpostos').value);
+        const percDistribuidor = parseFloat(document.querySelector('#percDistribuidor').value);
 
         const valorFinal = document.querySelector('#valorFinal');
-        valorFinal.value = custoFabrica + custoFabrica * percentualDistribuidor + custoFabrica * percentualImpostos;
+        valorFinal.value = custoFabrica + custoFabrica * percDistribuidor + custoFabrica * percImpostos;
       });
     </script>
   </body>
